@@ -1,14 +1,14 @@
 {% set name = "kubessh" %}
-{% set version = "0.1" %}
-
+{% set version = "0.2.dev" %}
+{% set commit = "f68801a5dabe7f9569f80b87807324c2c9c9223b" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kubessh-{{ version }}.tar.gz
-  sha256: 7ccf719a0ce6abb2efb051b8f583a521c2c65cecbf6708c6008cbcbbdacf7ee8
+  url: https://github.com/kubessh/kubessh/archive/{{ commit }}.tar.gz
+  sha256: bbc4d026e9081023ccdcf81725f71ec4576c4180cfb54cdd6d11fbe0b40a56a3
 
 build:
   number: 0
