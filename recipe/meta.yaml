@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/kubessh-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/kubessh-{{ version }}.tar.gz
   sha256: 7ccf719a0ce6abb2efb051b8f583a521c2c65cecbf6708c6008cbcbbdacf7ee8
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - kubessh=kubessh.app:main
@@ -19,10 +19,10 @@ build:
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3
+    - python >={{ python_min }}
     - aiohttp
     - asyncssh
     - escapism
@@ -43,6 +43,7 @@ test:
     # - kubessh --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/yuvipanda/kubessh
